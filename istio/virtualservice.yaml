@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+
+metadata:
+  name: frontend-virtualservice
+
+spec:
+  hosts:
+  - "*"
+
+  gateways:
+  - microservices-gateway
+
+  http:
+  - route:
+    - destination:
+        host: frontend-service
+        port:
+          number: 5000
+
+    timeout: 2s
+
+    retries:
+      attempts: 3
+      perTryTimeout: 1s
