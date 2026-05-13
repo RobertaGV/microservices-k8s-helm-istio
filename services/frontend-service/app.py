@@ -7,14 +7,23 @@ ORDER_SERVICE_URL = "http://order-service:5001/orders"
 
 @app.route("/", methods=["GET"])
 def home():
-    orders_response = requests.get(ORDER_SERVICE_URL, timeout=2)
-    orders = orders_response.json()
+    try:
+        orders_response = requests.get(ORDER_SERVICE_URL, timeout=5)
+        orders_response.raise_for_status()
+        orders = orders_response.json()
 
-    return jsonify({
-        "service": "frontend-service",
-        "message": "Microservices platform is running",
-        "orders": orders
-    })
+        return jsonify({
+            "service": "frontend-service",
+            "message": "Microservices platform is running",
+            "orders": orders
+        })
+
+    except requests.exceptions.RequestException as error:
+        return jsonify({
+            "service": "frontend-service",
+            "message": "Order service temporarily unavailable",
+            "error": str(error)
+        }), 503
 
 @app.route("/health", methods=["GET"])
 def health():
