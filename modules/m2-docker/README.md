@@ -96,9 +96,9 @@ The project contains:
 - product-service
 
 Each service has:
-- app.py
-- requirements.txt
-- Dockerfile
+- `app.py`
+- `requirements.txt`
+- `Dockerfile`
 
 This allows independent execution and deployment.
 
