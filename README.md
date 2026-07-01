@@ -81,16 +81,14 @@ microservices-k8s-helm-istio/
 │   ├── fault-injection.yaml
 │   └── mtls.yaml
 │
-├── modules/
-│   ├── m1-introduction/
-│   ├── m2-docker/
-│   ├── m3-kubernetes/
-│   ├── m4-helm/
-│   ├── m5-istio/
-│   └── m6-observability/
-│
-└── screenshots/
-```
+└── modules/
+    ├── m1-introduction/
+    ├── m2-docker/
+    ├── m3-kubernetes/
+    ├── m4-helm/
+    ├── m5-istio/
+    └── m6-observability/
+ ```
 
 ---
 
