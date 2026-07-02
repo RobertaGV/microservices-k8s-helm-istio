@@ -6,4 +6,4 @@ metadata:
 
 spec:
   mtls:
-    mode: PERMISSIVE
+    mode: STRICT
