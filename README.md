@@ -112,6 +112,10 @@ http://localhost:5000
 
 ### 2. Deploy on Kubernetes
 
+```bash
+minikube start --driver=docker
+```
+
 Apply Kubernetes manifests:
 
 ```bash
