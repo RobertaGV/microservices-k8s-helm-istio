@@ -131,6 +131,10 @@ kubectl get pods
 kubectl get services
 ```
 
+```bash
+kubectl port-forward service/frontend-service 5000:5000
+```
+
 ---
 
 ### 3. Deploy with Helm
